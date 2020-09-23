@@ -7,7 +7,7 @@ export const Exform = () => {
         <Form.Row>
           <Form.Group as={Col} controlId="formBasicname">
             <Form.Label>
-              <b>First Name</b>{" "}
+              <b>First Name</b>
             </Form.Label>
             <Form.Control type="text" placeholder="First Name" />
             <Form.Text className="text-muted"></Form.Text>
@@ -15,7 +15,7 @@ export const Exform = () => {
 
           <Form.Group as={Col} controlId="formBasicname">
             <Form.Label>
-              <b>Last Name</b>{" "}
+              <b>Last Name</b>
             </Form.Label>
             <Form.Control type="text" placeholder="Last Name" />
             <Form.Text className="text-muted"></Form.Text>
