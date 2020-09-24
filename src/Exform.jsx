@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form, Button, Container, Col } from "react-bootstrap";
 export const Exform = () => {
+  const [FirstName, SetFirstName] = useState("Mohammed");
+  const [MessageAlert, SetMessageAlert] = useState("");
+
   return (
     <Container>
       <Form>
@@ -9,8 +12,24 @@ export const Exform = () => {
             <Form.Label>
               <b>First Name</b>
             </Form.Label>
-            <Form.Control type="text" placeholder="First Name" />
+            <Form.Control
+              type="text"
+              placeholder="Enter First Name"
+              value={FirstName}
+              onChange={(e) => SetFirstName(e.target.value)}
+              onFocus={() => {
+                SetFirstName("");
+                SetMessageAlert("");
+              }}
+              onBlur={() => SetMessageAlert(`Successfully edited ${FirstName}`)}
+            />
             <Form.Text className="text-muted"></Form.Text>
+            <p>
+              <Form.Label>{FirstName}</Form.Label>
+            </p>
+            <p>
+              <Form.Label>{MessageAlert}</Form.Label>
+            </p>
           </Form.Group>
 
           <Form.Group as={Col} controlId="formBasicname">
