@@ -3,6 +3,8 @@ import { Form, Button, Container, Col } from "react-bootstrap";
 export const Exform = () => {
   const [FirstName, SetFirstName] = useState("Mohammed");
   const [MessageAlert, SetMessageAlert] = useState("");
+  const [LastName, SetLastName] = useState("Salman");
+  const [MessageAlert1, SetMessageAlert1] = useState("");
 
   return (
     <Container>
@@ -36,8 +38,26 @@ export const Exform = () => {
             <Form.Label>
               <b>Last Name</b>
             </Form.Label>
-            <Form.Control type="text" placeholder="Last Name" />
+            <Form.Control
+              type="text"
+              placeholder="Last Name"
+              value={LastName}
+              onChange={(e) => SetLastName(e.target.value)}
+              onFocus={(e) => {
+                SetLastName("");
+              }}
+              onBlur={(e) =>
+                SetMessageAlert1(`Successfully Edited ${LastName}`)
+              }
+            />
+
             <Form.Text className="text-muted"></Form.Text>
+            <p>
+              <Form.Label>{LastName}</Form.Label>
+            </p>
+            <p>
+              <Form.Label>{MessageAlert1}</Form.Label>
+            </p>
           </Form.Group>
         </Form.Row>
 
